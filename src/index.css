@@ -1,0 +1,42 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+:root {
+  --background: #54bab9;
+}
+
+/** categories */
+#completed {
+  color: #4caf50;
+  font-weight: bold;
+}
+
+#urgent {
+  color: #88001b;
+  font-weight: bold;
+}
+
+#important {
+  color: #ffc107;
+  font-weight: bold;
+}
+
+#later {
+  color: #9c27b0;
+  font-weight: bold;
+}
+
+/** themes */
+.light {
+  background-color: #f7ecde;
+  transition: all 500ms;
+}
+
+.dark {
+  background-color: #15202b;
+  transition: all 500ms;
+}

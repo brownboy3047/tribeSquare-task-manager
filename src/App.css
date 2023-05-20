@@ -1,0 +1,10 @@
+.app {
+  min-height: 100vh;
+  margin: auto;
+}
+/* 
+@media all and (320px <= width >= 768px) {
+  .app {
+    width: 100%;
+  }
+} */
