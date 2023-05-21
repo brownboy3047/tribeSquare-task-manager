@@ -1,15 +1,22 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef } from "react";
 import { useControl } from "../hooks/useControl";
 
 // style
 import "./AddTask.css";
 
 const AddTask = () => {
-  const { showModal, setShowModal, taskEdit, setTaskEdit, tasks, dispatch } =
-    useControl();
-  const [categories, setCategories] = useState();
+  const {
+    showModal,
+    setShowModal,
+    categories,
+    setCategories,
+    taskEdit,
+    setTaskEdit,
+    tasks,
+    dispatch,
+  } = useControl();
 
-  //*click outside the modal container to close
+  //click outside the modal container to close
   let modalRef = useRef(null);
 
   useEffect(() => {
@@ -62,25 +69,6 @@ const AddTask = () => {
       setShowModal(!showModal);
     }
   };
-
-  //*former main code
-  // const handleSubmit = (e) => {
-  //   e.preventDefault();
-
-  //   const newTask = {
-  //     id: Math.random() * 10000,
-  //     name: e.target.task.value,
-  //     category: categories,
-  //   };
-
-  //   if (e.target.task.value !== "") {
-  //     dispatch({ type: "ADD_TASK", payload: newTask });
-  //   }
-
-  //   e.target.value = "";
-  //   setTaskEdit({});
-  //   setShowModal(!showModal);
-  // };
 
   return (
     <main>

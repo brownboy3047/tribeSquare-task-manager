@@ -1,4 +1,3 @@
-// import { useState } from "react";
 import { useControl } from "../hooks/useControl";
 
 // style

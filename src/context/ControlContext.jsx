@@ -29,6 +29,7 @@ const taskReducer = (state, action) => {
 
 export const ControlProvider = ({ children }) => {
   const [showModal, setShowModal] = useState(false);
+  const [categories, setCategories] = useState();
   const [taskEdit, setTaskEdit] = useState({});
 
   //* Reduer function
@@ -50,6 +51,8 @@ export const ControlProvider = ({ children }) => {
         setShowModal,
         taskEdit,
         setTaskEdit,
+        categories,
+        setCategories,
       }}
     >
       {children}
