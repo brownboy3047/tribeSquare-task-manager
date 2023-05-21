@@ -71,12 +71,13 @@ form .add-task-categories .add-task-categories-input label {
   border-radius: 4px;
   width: 100px;
   font-weight: bold;
+  cursor: pointer;
 }
 
 @media all and (max-width: 600px) {
   .add-task-modal {
     max-width: 300px;
-    margin: 100px auto;
+    margin: 150px auto;
   }
 
   .add-task-modal form .add-task-input {
