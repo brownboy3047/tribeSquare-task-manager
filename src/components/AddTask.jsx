@@ -12,6 +12,7 @@ const AddTask = () => {
     setCategories,
     taskEdit,
     setTaskEdit,
+    theme,
     tasks,
     dispatch,
   } = useControl();
@@ -74,9 +75,14 @@ const AddTask = () => {
     <main>
       {showModal && (
         <section className="add-task">
-          <div className="add-task-modal" ref={modalRef}>
-            <h1>Create Task</h1>
-            <form onSubmit={handleSubmit}>
+          <div
+            className={
+              theme === "dark" ? "add-task-modal-dark" : "add-task-modal"
+            }
+            ref={modalRef}
+          >
+            <h1 className="add-task-modal-heading">Create Task</h1>
+            <form className="add-task-modal-form" onSubmit={handleSubmit}>
               <input
                 className="add-task-input"
                 type="text"

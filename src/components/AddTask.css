@@ -19,7 +19,20 @@
   background-color: var(--background);
 }
 
-.add-task-modal h1 {
+/* dark theme for add task modal */
+
+.add-task-modal-dark {
+  max-width: 500px;
+  height: 350px;
+  margin: 200px auto;
+  padding: 20px;
+  border: 2px solid #fff;
+  border-radius: 10px;
+
+  background-color: #354259;
+}
+
+.add-task-modal-heading {
   text-transform: uppercase;
   text-align: center;
   color: #fff;
@@ -31,11 +44,11 @@
   font-size: 20px;
 }
 
-.add-task-modal form {
+.add-task-modal-form {
   margin: 10px 0;
 }
 
-.add-task-modal form .add-task-input {
+.add-task-input {
   padding: 10px;
   border: none;
   outline: none;
@@ -48,21 +61,21 @@
   margin-left: 20px;
 }
 
-.add-task-modal form .add-task-categories {
+.add-task-categories {
   margin-bottom: 20px;
   padding: 20px;
 }
 
-form .add-task-categories .add-task-categories-input {
+.add-task-categories .add-task-categories-input {
   margin-bottom: 10px;
 }
 
-form .add-task-categories .add-task-categories-input label {
+.add-task-categories .add-task-categories-input label {
   margin-left: 10px;
   cursor: pointer;
 }
 
-.add-task-modal form button {
+.add-task-modal-form button {
   color: #278d8c;
   background-color: #fff;
   padding: 5px;
@@ -80,7 +93,12 @@ form .add-task-categories .add-task-categories-input label {
     margin: 150px auto;
   }
 
-  .add-task-modal form .add-task-input {
+  .add-task-modal-dark {
+    max-width: 300px;
+    margin: 150px auto;
+  }
+
+  .add-task-modal-form .add-task-input {
     width: 220px;
   }
 }

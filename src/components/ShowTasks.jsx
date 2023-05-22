@@ -4,7 +4,7 @@ import { useControl } from "../hooks/useControl";
 import "./ShowTasks.css";
 
 const ShowTasks = () => {
-  const { showModal, setShowModal, setTaskEdit, tasks, dispatch } =
+  const { showModal, setShowModal, setTaskEdit, theme, tasks, dispatch } =
     useControl();
 
   const handleDelete = (id) => {
@@ -27,7 +27,9 @@ const ShowTasks = () => {
   return (
     <main className="showTask">
       <main className="showTask-container">
-        <section className="showTask-head">
+        <section
+          className={theme === "dark" ? "showTask-head-dark" : "showTask-head"}
+        >
           <p>{tasks.length} task(s)</p>
 
           <button
@@ -45,7 +47,9 @@ const ShowTasks = () => {
           </button>
         </section>
 
-        <section className="showTask-body">
+        <section
+          className={theme === "dark" ? "showTask-body-dark" : "showTask-body"}
+        >
           <ul>
             {tasks &&
               tasks.map((task) => (

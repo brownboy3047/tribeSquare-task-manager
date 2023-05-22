@@ -1,21 +1,23 @@
-import { useEffect, useState } from "react";
+// import { useEffect, useState } from "react";
+import { useControl } from "../hooks/useControl";
 
 //style
 import "./Header.css";
 
 const Header = () => {
-  const [theme, setTheme] = useState(
-    JSON.parse(localStorage.getItem("theme")) || "dark"
-  );
+  const { theme, setTheme } = useControl();
+  // const [theme, setTheme] = useState(
+  //   JSON.parse(localStorage.getItem("theme")) || "dark"
+  // );
 
-  useEffect(() => {
-    localStorage.setItem("theme", JSON.stringify(theme));
-    document.documentElement.removeAttribute("class");
-    document.documentElement.classList.add(theme);
-  }, [theme]);
+  // useEffect(() => {
+  //   localStorage.setItem("theme", JSON.stringify(theme));
+  //   document.documentElement.removeAttribute("class");
+  //   document.documentElement.classList.add(theme);
+  // }, [theme]);
 
   return (
-    <header className="header">
+    <header className={theme === "dark" ? "header-dark" : "header"}>
       <h2>Personal Task manager</h2>
 
       <div className="header-icon">

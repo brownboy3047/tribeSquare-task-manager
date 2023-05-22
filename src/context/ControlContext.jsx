@@ -32,6 +32,10 @@ export const ControlProvider = ({ children }) => {
   const [categories, setCategories] = useState();
   const [taskEdit, setTaskEdit] = useState({});
 
+  const [theme, setTheme] = useState(
+    JSON.parse(localStorage.getItem("theme")) || "dark"
+  );
+
   //* Reduer function
   const [tasks, dispatch] = useReducer(
     taskReducer,
@@ -41,6 +45,13 @@ export const ControlProvider = ({ children }) => {
   useEffect(() => {
     localStorage.setItem("tasksData", JSON.stringify(tasks));
   }, [tasks]);
+
+  // useEffect for theme
+  useEffect(() => {
+    localStorage.setItem("theme", JSON.stringify(theme));
+    document.documentElement.removeAttribute("class");
+    document.documentElement.classList.add(theme);
+  }, [theme]);
 
   return (
     <ControlContext.Provider
@@ -53,6 +64,8 @@ export const ControlProvider = ({ children }) => {
         setTaskEdit,
         categories,
         setCategories,
+        theme,
+        setTheme,
       }}
     >
       {children}
